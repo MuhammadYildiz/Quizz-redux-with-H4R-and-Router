@@ -10,35 +10,39 @@ export default function DeleteQuiz() {
         if (quizTitle) {
             deletQuestion(quizTitle)
         }
-        else{
+        else {
             alert("Please Complate Question Title Input")
         }
     }
     return (
-        <div className='flex flex-col mb-14'>
-            <button
-                className='bg-cyan-700 shadow-2xl shadow-zinc-700 text-white text-center text-xl p-3  rounded-md my-10 w-[250px] m-auto font-bold hover:bg-black'
-                onClick={() => {
-                    setdisabled(!disabled);
-                    changeDeleteBtn()
-                }}
-                disabled={disabled}
+        <div className='flex flex-col mb-14 w-full'>
+            <a href="#btn"
+            className='flex'
             >
-                {!disabled ? "Delete Questions" : "Select remove questions."}
-            </button>
+                <button
+                    className='bg-cyan-700 shadow-2xl shadow-zinc-700 text-white text-center text-xl p-3  rounded-md my-10 w-[250px] m-auto font-bold hover:bg-black'
+                    onClick={() => {
+                        setdisabled(!disabled);
+                        changeDeleteBtn()
+                    }}
+                    disabled={disabled}
+                >
+                    {!disabled ? "Delete Questions" : "Select remove questions."}
+                </button>
+            </a>
             {useQuiz().questions.map((question, index) => {
                 return (
-                    <div key={index}>
+                    <div key={index} className="w-full">
                         {disabled &&
                             <div className='w-full m-auto  bg-cyan-700 p-3 sm:p-6 rounded-xl my-3' >
-                                <h1 className=' bg-white p-2 font-bold text-red-500'>
+                                <h1 className=' bg-white p-2 font-bold text-red-500 w-full'>
                                     Select question number <span className='bg-black px-3 py-2 rounded-full text-white'>
                                         {index + 1}
-                                    </span> to update
+                                    </span> to Remove
                                 </h1>
-                                <div className='flex items-center mt-4'>
+                                <div className='flex items-center mt-4 w-full '>
                                     <p className='bg-black px-3 py-1 rounded-full text-white'>{index + 1}</p>
-                                    <button
+                                    <button id='btn'
                                         className='bg-white w-full p-2 font-bold text-lg hover:bg-green-600 hover:text-white rounded-3xl'
                                         onClick={(e) => {
                                             setshowSelected(e.target.innerText)
@@ -90,7 +94,7 @@ export default function DeleteQuiz() {
                                         className='bg-cyan-700 text-white text-center text-xl p-3  rounded-md my-3 w-[200px] m-auto font-bold hover:bg-black flex justify-center items-center'
                                         type="submit"
                                     >
-                                        Remove Question
+                                        Remove
                                     </button>
                                 </form>
                             </div>}
