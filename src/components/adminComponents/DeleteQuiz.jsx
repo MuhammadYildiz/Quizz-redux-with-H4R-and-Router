@@ -17,7 +17,7 @@ export default function DeleteQuiz() {
     return (
         <div className='flex flex-col mb-14 w-full'>
             <a href="#btn"
-            className='flex'
+                className='flex'
             >
                 <button
                     className='bg-cyan-700 shadow-2xl shadow-zinc-700 text-white text-center text-xl p-3  rounded-md my-10 w-[250px] m-auto font-bold hover:bg-black'
@@ -43,7 +43,7 @@ export default function DeleteQuiz() {
                                 <div className='flex items-center mt-4 w-full '>
                                     <p className='bg-black px-3 py-1 rounded-full text-white'>{index + 1}</p>
                                     <button id='btn'
-                                        className='bg-white w-full p-2 font-bold text-lg hover:bg-green-600 hover:text-white rounded-3xl'
+                                        className='bg-white w-full p-2 font-bold text-lg hover:bg-green-600 hover:text-white rounded-3xl '
                                         onClick={(e) => {
                                             setshowSelected(e.target.innerText)
                                             setdisabled(!disabled)
@@ -56,13 +56,15 @@ export default function DeleteQuiz() {
                             </div>
                         }
                         {showSelected === question.title && !disabled &&
-                            <div className='shadow-2xl shadow-zinc-600 p-3 sm:p-6 rounded-2xl'>
-                                <button onClick={() => {
-                                    navigator.clipboard.writeText(question.title)
-                                    setalertCopy("Question Title is Copied")
-                                    setquizTitle("")
-                                }}>
-                                    <p className='bg-black text-white p-3 rounded-3xl hover:bg-green-700 shadow-lg shadow-yellow-50'>Click here to copy this question"
+                            <div className='shadow-2xl shadow-zinc-600 p-3 sm:p-6 rounded-2xl w-full'>
+                                <button
+                                className='w-full'
+                                    onClick={() => {
+                                        navigator.clipboard.writeText(question.title)
+                                        setalertCopy("Question Title is Copied")
+                                        setquizTitle("")
+                                    }}>
+                                    <p className='bg-black text-white p-3 rounded-3xl hover:bg-green-700 shadow-lg shadow-yellow-50 w-full'>Click here to copy this question"
                                         <span className='text-xl  border-b-2 border-red-200 '> {question.title}</span>" and paste to
                                         <span className='text-xl'> Question Title</span>
                                     </p>
