@@ -68,14 +68,16 @@ export default function UpdateQuiz() {
                             </div>
                         }
                         {showSelected === question.title && !updateBtn &&
-                            <div className='shadow-2xl shadow-zinc-600 p-3 sm:p-6 rounded-2xl '>
+                            <div className='shadow-2xl shadow-zinc-600 p-3 sm:p-6 rounded-2xl w-full '>
                                 <h1 className='text-3xl text-center my-2'>Please update the form of this question</h1>
-                                <button onClick={() => {
+                                <button
+                                className='w-full'
+                                 onClick={() => {
                                     navigator.clipboard.writeText(question.title)
                                     setalertCopy("Question Title is Copied")
                                     setquizTitle("")
                                 }}>
-                                    <p className='bg-black text-white p-3 rounded-3xl hover:bg-green-700 shadow-lg shadow-yellow-50'>Click here to copy this question"
+                                    <p className='bg-black text-white p-3 rounded-3xl hover:bg-green-700 shadow-lg shadow-yellow-50 w-full'>Click here to copy this question"
                                         <span className='text-xl  border-b-2 border-red-200 '> {question.title}</span>" and paste to
                                         <span className='text-xl'> Question Title</span>
                                     </p>
