@@ -37,7 +37,7 @@ export default function CreateQuiz() {
         <div className='flex flex-col justify-center items-center  w-full '>
             {!useQuiz().uppdateBtn &&
                 <div className='flex flex-col justify-center items-center  w-full'>
-                    <h1 className='text-3xl text-cyan-700 my-5 '>Create New Quizez</h1>
+                    <h1 className='text-3xl text-cyan-700 my-5 '>Create New Quizzes</h1>
                     <form onSubmit={handleAddQuizzes}
                         className="shadow-2xl shadow-zinc-700 border-2 border-cyan-700 rounded-2xl p-2 sm:p-6 w-full"
                     >
